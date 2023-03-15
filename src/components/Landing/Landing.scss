@@ -1,0 +1,53 @@
+.landing {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Teko", sans-serif;
+
+  h1 {
+    font-size: 6em;
+    font-family: "Odibee Sans", sans-serif;
+    margin: 0;
+    border-bottom: 5px solid #7c0000;
+  }
+
+  h3 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  span {
+    color: #7c0000;
+    margin: 0 12px;
+  }
+
+  img {
+    max-height: 50px;
+    border-radius: 50%;
+    margin: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 70px;
+    }
+
+    h3 {
+      font-size: 23px;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    h1 {
+      font-size: 50px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+  }
+}
