@@ -1,14 +1,16 @@
 import { Unity, useUnityContext } from "react-unity-webgl";
 import "./Resume2D.scss";
 import { useEffect, useState } from "react";
+import Button from "../Button/Button";
 
 const Resume2D = () => {
-  const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
-    loaderUrl: "resume2D/resume.loader.js",
-    dataUrl: "resume2D/resume.data",
-    frameworkUrl: "resume2D/resume.framework.js",
-    codeUrl: "resume2D/resume.wasm",
-  });
+  const { unityProvider, isLoaded, loadingProgression, requestFullscreen } =
+    useUnityContext({
+      loaderUrl: "resume2D/resume.loader.js",
+      dataUrl: "resume2D/resume.data",
+      frameworkUrl: "resume2D/resume.framework.js",
+      codeUrl: "resume2D/resume.wasm",
+    });
 
   const [devicePixelRatio, setDevicePixelRatio] = useState(
     window.devicePixelRatio
@@ -33,6 +35,10 @@ const Resume2D = () => {
     [devicePixelRatio]
   );
 
+  function handleClickEnterFullscreen() {
+    requestFullscreen(true);
+  }
+
   return (
     <div className="resume2d">
       {!isLoaded && (
@@ -48,6 +54,9 @@ const Resume2D = () => {
         className="resume2d__unity"
         devicePixelRatio={devicePixelRatio}
       />
+      {isLoaded && (
+        <Button onClick={handleClickEnterFullscreen}>Enter Fullscreen</Button>
+      )}
     </div>
   );
 };

@@ -1,0 +1,31 @@
+.button {
+  background-color: #7c0000;
+  color: white;
+  border-color: transparent;
+  min-width: 110px;
+  border-radius: 3px;
+  padding: 10px 14px;
+  margin: 10px;
+
+  &:hover {
+    background-color: #560000;
+  }
+  &:disabled {
+    background-color: #8c8c8c;
+    color: #afafaf;
+    border-color: #8c8c8c;
+  }
+
+  .button__children {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    font-size: 16px;
+    > svg {
+      height: 22px;
+      width: 22px;
+    }
+  }
+}
