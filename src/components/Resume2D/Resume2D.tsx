@@ -3,7 +3,7 @@ import "./Resume2D.scss";
 import { useEffect, useState } from "react";
 
 const Resume2D = () => {
-  const { unityProvider } = useUnityContext({
+  const { unityProvider, isLoaded, loadingProgression } = useUnityContext({
     loaderUrl: "resume2D/resume.loader.js",
     dataUrl: "resume2D/resume.data",
     frameworkUrl: "resume2D/resume.framework.js",
@@ -13,6 +13,8 @@ const Resume2D = () => {
   const [devicePixelRatio, setDevicePixelRatio] = useState(
     window.devicePixelRatio
   );
+
+  const loadingPercentage = Math.round(loadingProgression * 100);
 
   useEffect(
     function () {
@@ -33,6 +35,14 @@ const Resume2D = () => {
 
   return (
     <div className="resume2d">
+      {!isLoaded && (
+        <div className="loading-overlay">
+          <p>Loading Interactive Resume... ({loadingPercentage}%)</p>
+          <div className="progress-bar">
+            <div style={{ width: `${loadingPercentage}%` }}></div>
+          </div>
+        </div>
+      )}
       <Unity
         unityProvider={unityProvider}
         className="resume2d__unity"
