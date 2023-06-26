@@ -35,7 +35,7 @@ const Resume2D = () => {
     <div className="resume2d">
       <Unity
         unityProvider={unityProvider}
-        style={{ width: "100vw", height: "auto" }}
+        className="resume2d__unity"
         devicePixelRatio={devicePixelRatio}
       />
     </div>

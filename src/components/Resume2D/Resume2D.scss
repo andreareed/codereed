@@ -1,7 +1,18 @@
 .resume2d {
-  background-color: #282c34;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 50px;
+}
+
+.resume2d__unity {
+  width: 800px;
+
+  @media screen and (max-width: 810px) {
+    width: calc(100vw - 50px);
+  }
+
+  @media screen and (max-width: 400px) {
+    width: 100vw;
+  }
 }
