@@ -25,10 +25,12 @@
   align-items: center;
   flex-direction: column;
   z-index: 2;
+  color: #fff;
 
   .progress-bar {
-    width: 100%;
+    width: calc(100% - 20px);
     height: 20px;
+    margin: 10px;
     background-color: #fff;
 
     > div {
