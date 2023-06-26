@@ -10,6 +10,9 @@ const Resume2D = () => {
       dataUrl: "resume2D/resume.data",
       frameworkUrl: "resume2D/resume.framework.js",
       codeUrl: "resume2D/resume.wasm",
+      companyName: "AI Comm Labs",
+      productName: "Andrea Reed Resume",
+      productVersion: "1.0",
     });
 
   const [devicePixelRatio, setDevicePixelRatio] = useState(
@@ -54,7 +57,7 @@ const Resume2D = () => {
         className="resume2d__unity"
         devicePixelRatio={devicePixelRatio}
       />
-      {isLoaded && (
+      {isLoaded && document.fullscreenEnabled && (
         <Button onClick={handleClickEnterFullscreen}>Enter Fullscreen</Button>
       )}
     </div>
